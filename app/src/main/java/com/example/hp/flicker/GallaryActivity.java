@@ -52,14 +52,10 @@ public class GallaryActivity extends AppCompatActivity {
             public void onResponse(Call<ImageAdapter> call, Response<ImageAdapter> response) {
                 int code =response.code();
                 List<Photo> list_photos=response.body().getPhotos().getPhoto();
-                //karta connect? ek min developer mode nd issur
-
                 imageRecycleview.setAdapter(new ImageRecycleview(list_photos));
 
-                //String total= response.body().getPhotos().getTotal().toString();
-                String total= response.body().getPhotos().getPhoto().toString();
-                //Toast.makeText(GallaryActivity.this, total, Toast.LENGTH_SHORT).show();
-                //Log.e("total", String.valueOf(list_photos.size()));
+
+               
 
             }
 
@@ -71,22 +67,5 @@ public class GallaryActivity extends AppCompatActivity {
         });
     }
 
-    private static InputStream getHttpConnection(URL url)
-            throws IOException {
-        InputStream stream = null;
-        URLConnection connection = url.openConnection();
 
-        try {
-            HttpURLConnection httpConnection = (HttpURLConnection) connection;
-            httpConnection.setRequestMethod("GET");
-            httpConnection.connect();
-
-            if (httpConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                stream = httpConnection.getInputStream();
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        return stream;
-    }
 }

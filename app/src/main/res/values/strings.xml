@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Flicker</string>
-    <string name="api_key">d77cd44317e62e98eb762d6dbc9bfcb3</string>
+    <string name="app_name">Flickr</string>
+    <string name="api_key">59e95ef66c5e42f83d672002f81ffab7</string>
     <string name="jasonstring">json</string>
     <string name="tag">photo</string>
     <string name="flicker_method">flickr.photos.search</string>
